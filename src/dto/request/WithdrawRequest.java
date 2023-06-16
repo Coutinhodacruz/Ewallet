@@ -5,13 +5,13 @@ import lombok.Setter;
 
 import java.math.BigDecimal;
 
-@Getter
-@Setter
-public class DepositRequest {
 
+@Setter
+@Getter
+public class WithdrawRequest {
+
+    private String pin;
     private String accountNumber;
     private BigDecimal amount;
-    private int pin;
-
 
 }

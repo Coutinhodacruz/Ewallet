@@ -5,63 +5,40 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="81375054-1e4e-4277-acfd-ac11612aaadb" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_mail_javax_mail_api_1_6_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_4_13_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apiguardian_apiguardian_api_1_1_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_core_1_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_5_8_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_api_5_8_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_engine_5_8_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_params_5_8_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_platform_junit_platform_commons_1_8_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_platform_junit_platform_engine_1_8_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_opentest4j_opentest4j_1_2_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_projectlombok_lombok_1_18_26.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/eWallet.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/data/models/Account.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/data/models/Transaction.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/data/models/TransactionStatus.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/data/models/TransactionType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/data/repositories/AccountRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/data/repositories/AccountRepositoryImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/data/repositories/TransactionRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/data/repositories/TransactionRepositoryImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/dto/request/DepositRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/dto/request/LoginRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/dto/request/RegisterRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/dto/request/TransferRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/dto/response/DepositResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/dto/response/LoginResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/dto/response/RegisterResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/dto/response/TransferResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/services/AccountService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/services/AccountServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/services/TransactionService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/services/TransactionServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/IncorrectAccountNumberException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/InsufficientBalanceException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/InvalidAccountException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/Mapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/NegativeAmountException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/PhoneNumberExistException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/UserLoginWithInvalidCredentialsException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/UserRegisterTwiceWithExistingPhoneNumberException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/UserRegisterWithInvalidPhoneNumberException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/data/repositories/AccountRepositoryImplTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/data/repositories/TransactionRepositoryImplTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/services/AccountServiceImplTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/controllers/AccountController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/controllers/TransactionController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dto/request/WithdrawRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dto/response/TransactionResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/services/TransactionServiceTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/utils/AccountNotFoundException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/models/Account.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/models/Account.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/models/Transaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/models/Transaction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/repositories/AccountRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/repositories/AccountRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/repositories/AccountRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/repositories/AccountRepositoryImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/repositories/TransactionRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/repositories/TransactionRepositoryImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dto/request/DepositRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dto/request/DepositRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dto/request/TransferRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dto/request/TransferRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dto/response/LoginResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dto/response/LoginResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/AccountService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/AccountService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/AccountServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/AccountServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/TransactionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/TransactionService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/TransactionServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/TransactionServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/UserRegisterTwiceWithExistingPhoneNumberException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/data/models/Account.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/data/models/Account.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/data/models/Transaction.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/data/models/Transaction.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/data/repositories/AccountRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/data/repositories/AccountRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/data/repositories/AccountRepositoryImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/data/repositories/AccountRepositoryImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/data/repositories/TransactionRepositoryImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/data/repositories/TransactionRepositoryImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dto/request/TransferRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dto/request/TransferRequest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/services/AccountService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/services/AccountService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/services/AccountServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/services/AccountServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/services/TransactionService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/services/TransactionService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/services/TransactionServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/services/TransactionServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/utils/UserRegisterTwiceWithExistingPhoneNumberException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/services/AccountServiceImplTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/services/AccountServiceImplTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/services/AccountServiceImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/services/AccountServiceImplTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,29 +80,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.go.format.on.save.advertiser.fired": "true",
-    "RunOnceActivity.go.formatter.settings.were.checked": "true",
-    "RunOnceActivity.go.migrated.go.modules.settings": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "create.test.in.the.same.root": "true",
-    "dart.analysis.tool.window.visible": "false",
-    "go.import.settings.migrated": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "run.code.analysis.last.selected.profile": "pProject Default",
-    "show.migrate.to.gradle.popup": "false"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.format.on.save.advertiser.fired&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.formatter.settings.were.checked&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.go.migrated.go.modules.settings&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;create.test.in.the.same.root&quot;: &quot;true&quot;,
+    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
+    &quot;go.import.settings.migrated&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="utils" />
@@ -138,7 +115,14 @@
       <recent name="data.repositories" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.AccountServiceImplTest">
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="eWallet" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="AccountServiceImplTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="eWallet" />
       <extension name="coverage">
@@ -154,7 +138,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AccountServiceImplTest.depositNegativeAmountThrowException" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="AccountServiceImplTest.transferBelowBalanceThrowException" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="eWallet" />
       <extension name="coverage">
         <pattern>
@@ -164,13 +148,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="services" />
       <option name="MAIN_CLASS_NAME" value="services.AccountServiceImplTest" />
-      <option name="METHOD_NAME" value="depositNegativeAmountThrowException" />
+      <option name="METHOD_NAME" value="transferBelowBalanceThrowException" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AccountServiceImplTest.userCanDepositTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="AccountServiceImplTest.transferToIncorrectAccountNumberThrowException" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="eWallet" />
       <extension name="coverage">
         <pattern>
@@ -180,13 +164,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="services" />
       <option name="MAIN_CLASS_NAME" value="services.AccountServiceImplTest" />
-      <option name="METHOD_NAME" value="userCanDepositTest" />
+      <option name="METHOD_NAME" value="transferToIncorrectAccountNumberThrowException" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AccountServiceImplTest.userLoginWithInvalidCredentialsTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="AccountServiceImplTest.userCanTransferFromOneAccountToAnotherTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="eWallet" />
       <extension name="coverage">
         <pattern>
@@ -196,23 +180,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="services" />
       <option name="MAIN_CLASS_NAME" value="services.AccountServiceImplTest" />
-      <option name="METHOD_NAME" value="userLoginWithInvalidCredentialsTest" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="AccountServiceImplTest.userRegisterTwiceWithExistingPhoneNumberTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="eWallet" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="services.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="services" />
-      <option name="MAIN_CLASS_NAME" value="services.AccountServiceImplTest" />
-      <option name="METHOD_NAME" value="userRegisterTwiceWithExistingPhoneNumberTest" />
+      <option name="METHOD_NAME" value="userCanTransferFromOneAccountToAnotherTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -220,11 +188,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.AccountServiceImplTest" />
-        <item itemvalue="JUnit.AccountServiceImplTest.userLoginWithInvalidCredentialsTest" />
-        <item itemvalue="JUnit.AccountServiceImplTest.depositNegativeAmountThrowException" />
-        <item itemvalue="JUnit.AccountServiceImplTest.userRegisterTwiceWithExistingPhoneNumberTest" />
-        <item itemvalue="JUnit.AccountServiceImplTest.userCanDepositTest" />
+        <item itemvalue="JUnit.AccountServiceImplTest.transferToIncorrectAccountNumberThrowException" />
+        <item itemvalue="JUnit.AccountServiceImplTest.transferBelowBalanceThrowException" />
+        <item itemvalue="JUnit.AccountServiceImplTest.userCanTransferFromOneAccountToAnotherTest" />
       </list>
     </recent_temporary>
   </component>
@@ -251,7 +219,15 @@
       <workItem from="1685852764835" duration="9752000" />
       <workItem from="1686019891127" duration="8209000" />
       <workItem from="1686055757276" duration="2724000" />
-      <workItem from="1686099300106" duration="30400000" />
+      <workItem from="1686099300106" duration="43437000" />
+      <workItem from="1686248047800" duration="2757000" />
+      <workItem from="1686259464902" duration="149000" />
+      <workItem from="1686261184190" duration="16579000" />
+      <workItem from="1686310883885" duration="6948000" />
+      <workItem from="1686394755488" duration="10198000" />
+      <workItem from="1686591814179" duration="1658000" />
+      <workItem from="1686662658146" duration="42000" />
+      <workItem from="1686688989469" duration="81000" />
     </task>
     <servers />
   </component>

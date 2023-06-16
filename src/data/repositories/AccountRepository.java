@@ -21,4 +21,8 @@ public interface AccountRepository {
     Account findAccount(String accountNumber);
 
     Account confirmPin(int pin);
+
+    String findByUsername(String username);
+
+    boolean accountExists(String recipientAccountNumber);
 }

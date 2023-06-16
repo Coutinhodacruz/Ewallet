@@ -4,15 +4,13 @@ package services;
 import dto.request.DepositRequest;
 import dto.request.LoginRequest;
 import dto.request.RegisterRequest;
+import dto.request.TransferRequest;
 import dto.response.LoginResponse;
 import lombok.SneakyThrows;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import utils.NegativeAmountException;
-import utils.PhoneNumberExistException;
-import utils.UserLoginWithInvalidCredentialsException;
-import utils.UserRegisterWithInvalidPhoneNumberException;
+import utils.*;
 
 import java.math.BigDecimal;
 
@@ -23,6 +21,10 @@ class AccountServiceImplTest {
 
     private AccountService accountService = new AccountServiceImpl();
     private  RegisterRequest registerRequest = new RegisterRequest();
+    
+    private RegisterRequest registerRequestTwo = new RegisterRequest();
+
+
 
 
     @BeforeEach
@@ -33,6 +35,13 @@ class AccountServiceImplTest {
         registerRequest.setPhoneNumber("07034766551");
         registerRequest.setPin(1111);
         registerRequest.setPassword("Dacruz");
+
+        registerRequestTwo.setFirstName("Legend");
+        registerRequestTwo.setLastName("Odogwu");
+        registerRequestTwo.setUsername("Ekene");
+        registerRequestTwo.setPhoneNumber("09023457689");
+        registerRequestTwo.setPin(4190);
+        registerRequestTwo.setPassword("Enzo");
     }
 
     @Test
@@ -48,12 +57,21 @@ class AccountServiceImplTest {
     }
 
     @Test
-    void userRegisterTwiceWithExistingPhoneNumberTest() throws  PhoneNumberExistException {
-        String actual = accountService.register(registerRequest).toString();
+    void userRegisterTwiceWithExistingPhoneNumberTest() {
+        String actual = null;
+        try {
+            actual = accountService.register(registerRequest).toString();
+        } catch (PhoneNumberExistException e) {
+            System.out.println(e.getMessage());
+        }
         assertNotNull(actual);
 
-        registerRequest.setPhoneNumber("08034766551");
-        accountService.register(registerRequest);
+        registerRequest.setPhoneNumber("07034766551");
+        try {
+            accountService.register(registerRequest);
+        } catch (PhoneNumberExistException e) {
+            System.out.println(e.getMessage());
+        }
         assertThrows(PhoneNumberExistException.class, ()->
                 accountService.register(registerRequest));
 
@@ -136,7 +154,7 @@ class AccountServiceImplTest {
         depositRequest.setAccountNumber("7034766551");
         depositRequest.setAmount(BigDecimal.valueOf(10_000));
         depositRequest.setPin(1111);
-        accountService.deposit(depositRequest);
+        accountService.depositInto(depositRequest);
         assertEquals(BigDecimal.valueOf(10_000), accountService.getBalance("7034766551"),loginResponse.getMessage());
     }
 
@@ -150,30 +168,107 @@ class AccountServiceImplTest {
         depositRequest.setPin(1111);
 
         try {
-            accountService.deposit(depositRequest);
+            accountService.depositInto(depositRequest);
         } catch (NegativeAmountException e) {
             System.out.println(e.getMessage());
         }
         assertThrows(NegativeAmountException.class, () ->
-                accountService.deposit(depositRequest));
+                accountService.depositInto(depositRequest));
     }
 
 
 
 
     @Test
-    void userCanTransferTest(){
+    void userCanTransferFromOneAccountToAnotherTest() throws PhoneNumberExistException, NegativeAmountException {
+        accountService.register(registerRequest);
 
+        accountService.register(registerRequestTwo);
+        assertEquals(BigDecimal.valueOf(0), accountService.getBalance("9023457689"));
+
+        DepositRequest depositRequest = new DepositRequest();
+        depositRequest.setAccountNumber("7034766551");
+        depositRequest.setAmount(BigDecimal.valueOf(3000));
+        accountService.depositInto(depositRequest);
+        assertEquals(BigDecimal.valueOf(3000), accountService.getBalance("7034766551"));
+
+
+        TransferRequest transferRequest = new TransferRequest();
+        transferRequest.setSenderAccountNumber("7034766551");
+        transferRequest.setRecipientAccountNumber("9023457689");
+        transferRequest.setAmount(BigDecimal.valueOf(2000));
+        transferRequest.setPin(1111);
+        try {
+            accountService.transfer(transferRequest);
+        } catch (InsufficientBalanceException | IncorrectAccountNumberException e) {
+            System.out.println(e.getMessage());
+        }
+
+        assertEquals(BigDecimal.valueOf(1000), accountService.getBalance("7034766551"));
+        assertEquals(BigDecimal.valueOf(2000), accountService.getBalance("9023457689"));
     }
 
 
+
     @Test
-    void transferBelowBalanceThrowException(){
+    void transferBelowBalanceThrowException() throws PhoneNumberExistException, NegativeAmountException {
+        accountService.register(registerRequest);
+
+        accountService.register(registerRequestTwo);
+        assertEquals(BigDecimal.valueOf(0), accountService.getBalance("9023457689"));
+
+        DepositRequest depositRequest = new DepositRequest();
+        depositRequest.setAccountNumber("7034766551");
+        depositRequest.setAmount(BigDecimal.valueOf(3000));
+        accountService.depositInto(depositRequest);
+        assertEquals(BigDecimal.valueOf(3000), accountService.getBalance("7034766551"));
+
+
+        TransferRequest transferRequest = new TransferRequest();
+        transferRequest.setSenderAccountNumber("7034766551");
+        transferRequest.setRecipientAccountNumber("9023457689");
+        transferRequest.setAmount(BigDecimal.valueOf(9000));
+        transferRequest.setPin(1111);
+        try {
+            accountService.transfer(transferRequest);
+        } catch (InsufficientBalanceException | IncorrectAccountNumberException e) {
+            System.out.println(e.getMessage());
+        }
+
+
+        assertThrows(InsufficientBalanceException.class, () ->
+            accountService.transfer(transferRequest)
+        );
 
     }
 
     @Test
-    void transferToIncorrectAccountNumberThrowException(){
+    void transferToIncorrectAccountNumberThrowException() throws PhoneNumberExistException, NegativeAmountException{
+        accountService.register(registerRequest);
+
+        accountService.register(registerRequestTwo);
+        assertEquals(BigDecimal.valueOf(0), accountService.getBalance("9023457689"));
+
+        DepositRequest depositRequest = new DepositRequest();
+        depositRequest.setAccountNumber("7034766551");
+        depositRequest.setAmount(BigDecimal.valueOf(3000));
+        accountService.depositInto(depositRequest);
+        assertEquals(BigDecimal.valueOf(3000), accountService.getBalance("7034766551"));
+
+
+        TransferRequest transferRequest = new TransferRequest();
+        transferRequest.setSenderAccountNumber("7034766551");
+        transferRequest.setRecipientAccountNumber("0987641234677");
+        transferRequest.setAmount(BigDecimal.valueOf(2000));
+        transferRequest.setPin(1111);
+        try {
+            accountService.transfer(transferRequest);
+        } catch (InsufficientBalanceException | IncorrectAccountNumberException e) {
+            System.out.println(e.getMessage());
+        }
+        assertThrows(IncorrectAccountNumberException.class, () ->
+            accountService.transfer(transferRequest)
+        );
 
     }
 

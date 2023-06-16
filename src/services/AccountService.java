@@ -1,17 +1,12 @@
 package services;
 
 import data.models.Account;
-import dto.request.DepositRequest;
-import dto.request.LoginRequest;
-import dto.request.RegisterRequest;
-import dto.request.TransferRequest;
+import dto.request.*;
 import dto.response.DepositResponse;
 import dto.response.LoginResponse;
 import dto.response.RegisterResponse;
 import dto.response.TransferResponse;
-import utils.NegativeAmountException;
-import utils.PhoneNumberExistException;
-import utils.UserLoginWithInvalidCredentialsException;
+import utils.*;
 
 
 import java.math.BigDecimal;
@@ -19,12 +14,16 @@ import java.util.List;
 
 public interface AccountService {
 
-    RegisterResponse register(RegisterRequest registerRequest) throws  PhoneNumberExistException;
+    RegisterResponse    register(RegisterRequest registerRequest) throws  PhoneNumberExistException;
     LoginResponse login(LoginRequest loginRequest) throws UserLoginWithInvalidCredentialsException;
-    DepositResponse deposit(DepositRequest depositRequest) throws NegativeAmountException;
-    TransferResponse transfer(TransferRequest transferRequest);
+    DepositResponse depositInto(DepositRequest depositRequest) throws NegativeAmountException;
+
+    void withdrawFrom(WithdrawRequest withdrawRequest);
+    TransferResponse transfer(TransferRequest transferRequest) throws NegativeAmountException, InsufficientBalanceException, IncorrectAccountNumberException;
 
     BigDecimal getBalance(String accountNumber);
+
+    String getCurrentUserLoggedIn(String username);
     List<Account> getAll();
 
 }

@@ -50,7 +50,6 @@ public class TransactionRepositoryImpl implements TransactionRepository {
     @Override
     public List<Transaction> findByType(TransactionType type) {
         List <Transaction> typesFound = new ArrayList<>();
-
         for (Transaction transaction : transactions){
             if (transaction.getType() == type){
                 typesFound.add(transaction);
@@ -65,7 +64,6 @@ public class TransactionRepositoryImpl implements TransactionRepository {
         Transaction foundTransaction = null;
         for (Transaction transaction : transactions)
             if (transaction.getDate().equals(date)) foundTransaction = transaction;
-
 
 
         return foundTransaction;

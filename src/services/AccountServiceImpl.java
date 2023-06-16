@@ -3,20 +3,15 @@ package services;
 import data.models.Account;
 import data.repositories.AccountRepository;
 import data.repositories.AccountRepositoryImpl;
-import dto.request.DepositRequest;
-import dto.request.LoginRequest;
-import dto.request.RegisterRequest;
-import dto.request.TransferRequest;
+import dto.request.*;
 import dto.response.DepositResponse;
 import dto.response.LoginResponse;
 import dto.response.RegisterResponse;
 import dto.response.TransferResponse;
 import utils.*;
 
-
 import java.math.BigDecimal;
 
-import java.util.ArrayList;
 import java.util.List;
 
 
@@ -24,7 +19,6 @@ public class AccountServiceImpl implements AccountService{
 
     AccountRepository accountRepository = new AccountRepositoryImpl();
 
-    List<BigDecimal> accountBalances = new ArrayList<>();
 
 
     @Override
@@ -75,7 +69,6 @@ public class AccountServiceImpl implements AccountService{
             throw new UserLoginWithInvalidCredentialsException("Invalid credentials");
         }
 
-        // Further processing or response creation can be done here
         LoginResponse loginResponse = new LoginResponse();
         loginResponse.setMessage("Login successful");
         return loginResponse;
@@ -92,34 +85,8 @@ public class AccountServiceImpl implements AccountService{
     }
 
 
-//    @Override
-//    public LoginResponse login(LoginRequest loginRequest) throws UserLoginWithInvalidCredentialsException {
-//
-//        LoginResponse loginResponse = new LoginResponse();
-//        String username = loginRequest.getUsername();
-//        String password = loginRequest.getPassword();
-//
-//        boolean isAuthenticated = authenticate(username, password);
-//        if (!isAuthenticated)
-//            throw new UserLoginWithInvalidCredentialsException("Invalid Credentials");
-//        Account account = Mapper.map(loginRequest);
-//        accountRepository.save(account);
-//        return Mapper.map(loginResponse);
-//    }
-//
-//
-//    private boolean authenticate(String username, String password){
-//        List<Account> accounts = accountRepository.findAll();
-//        for (Account account : accounts) {
-//            if (account.getUsername().equals(username) && account.getPassword().equals(password)) {
-//                return true;
-//            }
-//        }
-//        return false;
-//    }
-
     @Override
-    public DepositResponse deposit(DepositRequest depositRequest) throws NegativeAmountException {
+    public DepositResponse depositInto(DepositRequest depositRequest) throws NegativeAmountException {
         Account account = accountRepository.findAccount(depositRequest.getAccountNumber());
         BigDecimal amount = depositRequest.getAmount();
 
@@ -130,8 +97,18 @@ public class AccountServiceImpl implements AccountService{
 
 
         account.deposit(amount);
+        accountRepository.save(account);
         DepositResponse depositResponse = new DepositResponse("Deposit Successful");
         return depositResponse;
+    }
+
+    @Override
+    public void withdrawFrom(WithdrawRequest withdrawRequest) {
+        Account account = accountRepository.findAccount(withdrawRequest.getAccountNumber());
+        BigDecimal amount = withdrawRequest.getAmount();
+
+        account.withdraw(amount);
+        accountRepository.save(account);
     }
 
     private boolean validateNegativeAmount(BigDecimal amount) {
@@ -141,49 +118,56 @@ public class AccountServiceImpl implements AccountService{
 
         return false;
 
-//        return amount.compareTo(BigDecimal.ZERO) < 0;
     }
 
-
-//
-//    @Override
-//    public TransferResponse transfer(TransferRequest transferRequest) throws InsufficientBalanceException, IncorrectAccountNumberException {
-//        String fromAccountNumber = transferRequest.getSenderAccountNumber();
-//        String toAccountNumber = transferRequest.getRecipientAccountNumber();
-//        double amount = transferRequest.getAmount();
-//
-//        Account fromAccount = accountRepository.findAccount(fromAccountNumber);
-//        Account toAccount = accountRepository.findAccount(toAccountNumber);
-//
-//        if (fromAccount == null || toAccount == null) {
-//            throw new IncorrectAccountNumberException("Invalid account number");
-//        }
-//
-//        if (fromAccount.getBalance() < amount) {
-//            throw new InsufficientBalanceException("Insufficient balance");
-//        }
-//
-//        fromAccount.withdraw(amount);
-//        toAccount.deposit(amount);
-//
-//        TransferResponse transferResponse = new TransferResponse("Transfer successful");
-//        return transferResponse;
-//    }
 
 
     @Override
-    public TransferResponse transfer(TransferRequest transferRequest) {
+    public TransferResponse transfer(TransferRequest transferRequest) throws NegativeAmountException, InsufficientBalanceException, IncorrectAccountNumberException {
         Account accountPin = accountRepository.confirmPin(transferRequest.getPin());
 
-//        if (account == null || accountPin == null)
-//            throw new InvalidAccountException("Invalid details");
-        return null;
+        BigDecimal transferAmount = transferRequest.getAmount();
+
+
+        BigDecimal senderBalance = getBalance(transferRequest.getSenderAccountNumber());
+        if (senderBalance.compareTo(transferAmount) < 0) {
+            throw new InsufficientBalanceException("Insufficient balance in the sender's account.");
+        }
+
+        WithdrawRequest withdrawRequest = new WithdrawRequest();
+        withdrawRequest.setAccountNumber(transferRequest.getSenderAccountNumber());
+        withdrawRequest.setAmount(transferAmount);
+        withdrawFrom(withdrawRequest);
+
+
+        DepositRequest depositRequest = new DepositRequest();
+        depositRequest.setAccountNumber(transferRequest.getRecipientAccountNumber());
+        depositRequest.setAmount(transferAmount);
+
+
+        if (!accountRepository.accountExists(transferRequest.getRecipientAccountNumber())) {
+            throw new IncorrectAccountNumberException("Recipient account not found.");
+        }
+        depositInto(depositRequest);
+
+      depositInto(depositRequest);
+
+        TransferResponse transferResponse = new TransferResponse("Transfer Successful");
+        return transferResponse;
     }
+
+
+
 
     @Override
     public BigDecimal getBalance(String accountNumber) {
         Account account = accountRepository.findAccount(accountNumber);
         return account.getBalance();
+    }
+
+    @Override
+    public String getCurrentUserLoggedIn(String username) {
+        return accountRepository.findByUsername(username);
     }
 
     @Override

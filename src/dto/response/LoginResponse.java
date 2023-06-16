@@ -10,10 +10,6 @@ import lombok.*;
 public class LoginResponse {
     private String message;
 
-//    public LoginResponse(String message){
-//        this.message = message;
-//    }
-
     @Override
     public String toString() {
         final StringBuilder sb = new StringBuilder("LoginResponse{");

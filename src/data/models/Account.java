@@ -1,7 +1,5 @@
 package data.models;
 
-
-import lombok.Builder;
 import lombok.Data;
 
 
@@ -11,7 +9,6 @@ import static java.math.BigDecimal.*;
 
 @Data
 public class Account {
-
 
     private String id;
     private String firstName;
@@ -30,6 +27,11 @@ public class Account {
 
     public void deposit(BigDecimal amount){
         this.balance = balance.add(amount);
+    }
+
+
+    public void withdraw(BigDecimal amount) {
+        this.balance = balance.subtract(amount);
     }
 
 

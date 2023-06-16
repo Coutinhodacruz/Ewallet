@@ -103,4 +103,19 @@ public class AccountRepositoryImpl implements AccountRepository {
         }
         return foundPin;
     }
+
+    @Override
+    public String findByUsername(String username) {
+        for (Account account: accounts) {
+            if (account.getUsername().equals(username))
+                return account.getAccountNumber();
+        }
+        return null;
+    }
+
+    @Override
+    public boolean accountExists(String recipientAccountNumber) {
+        
+        return recipientAccountNumber != null && !recipientAccountNumber.isEmpty();
+    }
 }

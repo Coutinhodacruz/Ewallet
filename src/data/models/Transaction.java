@@ -9,6 +9,7 @@ import java.time.LocalDate;
 
 public class Transaction {
 
+
     private String id;
     private TransactionStatus status;
     private TransactionType type;
