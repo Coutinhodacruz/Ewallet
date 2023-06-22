@@ -243,9 +243,8 @@ class AccountServiceImplTest {
     }
 
     @Test
-    void transferToIncorrectAccountNumberThrowException() throws PhoneNumberExistException, NegativeAmountException{
+    void transferToIncorrectAccountNumberThrowException() throws PhoneNumberExistException, NegativeAmountException {
         accountService.register(registerRequest);
-
         accountService.register(registerRequestTwo);
         assertEquals(BigDecimal.valueOf(0), accountService.getBalance("9023457689"));
 
@@ -256,25 +255,46 @@ class AccountServiceImplTest {
         assertEquals(BigDecimal.valueOf(3000), accountService.getBalance("7034766551"));
 
 
+        RegisterRequest recipientRegisterRequest = new RegisterRequest();
+        recipientRegisterRequest.setFirstName("Recipient");
+        recipientRegisterRequest.setPhoneNumber("0987641234677");
+        recipientRegisterRequest.setPin(2222);
+        accountService.register(recipientRegisterRequest);
+
         TransferRequest transferRequest = new TransferRequest();
         transferRequest.setSenderAccountNumber("7034766551");
-        transferRequest.setRecipientAccountNumber("0987641234677");
+        transferRequest.setRecipientAccountNumber("987641234677");
         transferRequest.setAmount(BigDecimal.valueOf(2000));
         transferRequest.setPin(1111);
-        try {
-            accountService.transfer(transferRequest);
-        } catch (InsufficientBalanceException | IncorrectAccountNumberException e) {
-            System.out.println(e.getMessage());
-        }
-        assertThrows(IncorrectAccountNumberException.class, () ->
-            accountService.transfer(transferRequest)
-        );
 
+        assertThrows(IncorrectAccountNumberException.class, () ->
+                accountService.transfer(transferRequest)
+        );
     }
 
     @Test
-    void validateTransferWithIncorrectPinThrowException(){
+    void validateTransferWithIncorrectPinThrowException() throws PhoneNumberExistException, NegativeAmountException {
 
+        accountService.register(registerRequest);
+        accountService.register(registerRequestTwo);
+        assertEquals(BigDecimal.valueOf(0), accountService.getBalance("9023457689"));
+
+        DepositRequest depositRequest = new DepositRequest();
+        depositRequest.setAccountNumber("7034766551");
+        depositRequest.setAmount(BigDecimal.valueOf(3000));
+        accountService.depositInto(depositRequest);
+        assertEquals(BigDecimal.valueOf(3000), accountService.getBalance("7034766551"));
+
+        TransferRequest transferRequest = new TransferRequest();
+        transferRequest.setSenderAccountNumber("7034766551");
+        transferRequest.setRecipientAccountNumber("987641234567");
+        transferRequest.setAmount(BigDecimal.valueOf(2000));
+        transferRequest.setPin(9999); // Incorrect PIN
+
+
+        assertThrows(IncorrectPinException.class, () ->
+                accountService.transfer(transferRequest)
+        );
     }
 
 

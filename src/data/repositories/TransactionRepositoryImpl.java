@@ -1,14 +1,12 @@
 package data.repositories;
 
 import data.models.Transaction;
-import data.models.TransactionStatus;
 import data.models.TransactionType;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
-import java.util.Optional;
 
 public class TransactionRepositoryImpl implements TransactionRepository {
 
@@ -27,7 +25,7 @@ public class TransactionRepositoryImpl implements TransactionRepository {
     }
 
     @Override
-    public Transaction findById(String id) {
+    public Transaction findTransactionById(String id) {
         Transaction foundTransaction = null;
         for (Transaction transaction : transactions){
             boolean idMatch = Objects.equals(transaction.getId(), id);
@@ -37,27 +35,40 @@ public class TransactionRepositoryImpl implements TransactionRepository {
     }
 
     @Override
-    public List<Transaction> findByStatus(TransactionStatus status) {
-       List<Transaction> statusFound = new ArrayList<>();
-       for (Transaction transaction : transactions){
-           if (transaction.getStatus().equals(status)){
-               statusFound.add(transaction);
-           }
-       }
-        return statusFound;
+    public List<Transaction> findTransactionsByAccountId(String accountId) {
+        List<Transaction> transactionsWithAccountId = new ArrayList<>();
+        for (Transaction transaction : transactions) {
+            if (Objects.equals(transaction.getAccountId(), accountId)) {
+                transactionsWithAccountId.add(transaction);
+            }
+        }
+        return transactionsWithAccountId;
+    }
+
+
+    @Override
+    public List<Transaction> findAllCreditTransactions(TransactionType creditType) {
+        List<Transaction> creditTransactions = new ArrayList<>();
+        for (Transaction transaction : transactions) {
+            if (transaction.getType() == creditType) {
+                creditTransactions.add(transaction);
+            }
+        }
+        return creditTransactions;
     }
 
     @Override
-    public List<Transaction> findByType(TransactionType type) {
-        List <Transaction> typesFound = new ArrayList<>();
-        for (Transaction transaction : transactions){
-            if (transaction.getType() == type){
-                typesFound.add(transaction);
+    public List<Transaction> findAllDebitTransactions(TransactionType debitType) {
+        List<Transaction> debitTransactions = new ArrayList<>();
+        for (Transaction transaction : transactions) {
+            if (transaction.getType() == debitType) {
+                debitTransactions.add(transaction);
             }
         }
-
-        return typesFound;
+        return debitTransactions;
     }
+
+
 
     @Override
     public Transaction findByDate(LocalDate date) {
@@ -70,13 +81,13 @@ public class TransactionRepositoryImpl implements TransactionRepository {
     }
 
     @Override
-    public List<Transaction> findAll() {
+    public List<Transaction> findAllTransaction() {
         return transactions;
     }
 
     @Override
-    public void delete(String id) {
-        Transaction foundTransaction = findById(id);
+    public void deleteTransactionById(String id) {
+        Transaction foundTransaction = findTransactionById(id);
         transactions.remove(foundTransaction);
 
     }

@@ -13,6 +13,8 @@ public class Main {
     static TransactionController transactionController = new TransactionController();
     static String currentUserLoggedIn = "";
 
+    static int accountId;
+
     public static void main(String[] args) {
         startApp();
 
@@ -94,15 +96,25 @@ public class Main {
                 1 -> Deposit
                 2 -> Transfer
                 3 -> Balance
-                4 -> Main Menu
+                4 -> Transaction
+                5 -> Log Out
                 """);
 
         switch (mainMenu){
             case "1" -> deposit();
             case "2" -> transfer();
             case "3" -> getBalance();
+            case "4" -> transaction();
             default -> startApp();
         }
+    }
+
+    private static void transaction() {
+
+//        Object result = transactionController.findAllTransaction(accountId);
+//        System.out.println(result.toString());
+        displayAppFunctionalities();
+
     }
 
     private static void getBalance(){
@@ -115,7 +127,7 @@ public class Main {
         TransferRequest transferRequest = new TransferRequest();
 
         String amount = collectStringInput("Enter amount");
-//        String sender = collectStringInput("Sender AccountNumber");
+        String sender = collectStringInput("Sender AccountNumber");
         String receiver = collectStringInput("Receiver AccountNumber");
         int pin = Integer.parseInt(collectStringInput("Enter your pin"));
 

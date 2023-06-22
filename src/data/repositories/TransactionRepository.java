@@ -12,17 +12,22 @@ public interface TransactionRepository {
 
     Transaction save(Transaction transaction);
 
-    Transaction findById(String id);
+    Transaction findTransactionById(String id);
 
-    List<Transaction> findByStatus(TransactionStatus status);
+    List<Transaction> findTransactionsByAccountId(String accountId);
 
-    List<Transaction> findByType(TransactionType type);
+    List<Transaction> findAllCreditTransactions(TransactionType creditType);
+
+    List<Transaction> findAllDebitTransactions(TransactionType debitType);
 
     Transaction findByDate(LocalDate date);
 
-    List<Transaction> findAll();
+    List<Transaction> findAllTransaction();
 
-    void delete(String id);
+    void deleteTransactionById(String id);
 
     int count();
 }
+
+
+

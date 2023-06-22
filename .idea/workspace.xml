@@ -5,40 +5,33 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="81375054-1e4e-4277-acfd-ac11612aaadb" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/controllers/AccountController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/controllers/TransactionController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/dto/request/WithdrawRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/dto/response/TransactionResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/services/TransactionServiceTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/utils/AccountNotFoundException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dto/request/TransactionRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/IncorrectPinException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/services/TransactionServiceImplTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/models/Account.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/models/Account.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/TransactionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/TransactionController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/data/models/Transaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/models/Transaction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/repositories/AccountRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/repositories/AccountRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/repositories/AccountRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/repositories/AccountRepositoryImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/repositories/TransactionRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/repositories/TransactionRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/data/repositories/TransactionRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/repositories/TransactionRepositoryImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dto/request/DepositRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dto/request/DepositRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dto/request/TransferRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dto/request/TransferRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dto/response/LoginResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dto/response/LoginResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/AccountService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/AccountService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dto/response/TransactionResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dto/response/TransactionResponse.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/services/AccountServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/AccountServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/services/TransactionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/TransactionService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/services/TransactionServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/TransactionServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/UserRegisterTwiceWithExistingPhoneNumberException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/data/models/Account.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/data/models/Account.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/Mapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/Mapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/data/models/Transaction.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/data/models/Transaction.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/data/repositories/AccountRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/data/repositories/AccountRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/data/repositories/AccountRepositoryImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/data/repositories/AccountRepositoryImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/data/repositories/TransactionRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/data/repositories/TransactionRepository.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/data/repositories/TransactionRepositoryImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/data/repositories/TransactionRepositoryImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dto/request/TransferRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dto/request/TransferRequest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/services/AccountService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/services/AccountService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/dto/response/LoginResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/dto/response/LoginResponse.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/services/AccountServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/services/AccountServiceImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/services/TransactionService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/services/TransactionService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/services/TransactionServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/services/TransactionServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/utils/UserRegisterTwiceWithExistingPhoneNumberException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/utils/Mapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/utils/Mapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/data/repositories/TransactionRepositoryImplTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/data/repositories/TransactionRepositoryImplTest.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/services/AccountServiceImplTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/services/AccountServiceImplTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/data/repositories/TransactionRepositoryImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/data/repositories/TransactionRepositoryImplTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/services/AccountServiceImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/services/AccountServiceImplTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/services/TransactionServiceTest.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,29 +73,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.go.format.on.save.advertiser.fired&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.go.formatter.settings.were.checked&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.go.migrated.go.modules.settings&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
-    &quot;create.test.in.the.same.root&quot;: &quot;true&quot;,
-    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
-    &quot;go.import.settings.migrated&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.go.format.on.save.advertiser.fired": "true",
+    "RunOnceActivity.go.formatter.settings.were.checked": "true",
+    "RunOnceActivity.go.migrated.go.modules.settings": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "create.test.in.the.same.root": "true",
+    "dart.analysis.tool.window.visible": "false",
+    "go.import.settings.migrated": "true",
+    "last_directory_selection": "C:/Users/Admin/eWallet/src/utils",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "show.migrate.to.gradle.popup": "false"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="utils" />
@@ -115,14 +109,7 @@
       <recent name="data.repositories" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Main" />
-      <module name="eWallet" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.AccountServiceImplTest.validateTransferWithIncorrectPinThrowException">
     <configuration name="AccountServiceImplTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="eWallet" />
       <extension name="coverage">
@@ -134,22 +121,6 @@
       <option name="PACKAGE_NAME" value="services" />
       <option name="MAIN_CLASS_NAME" value="services.AccountServiceImplTest" />
       <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="AccountServiceImplTest.transferBelowBalanceThrowException" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="eWallet" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="services.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="services" />
-      <option name="MAIN_CLASS_NAME" value="services.AccountServiceImplTest" />
-      <option name="METHOD_NAME" value="transferBelowBalanceThrowException" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -186,13 +157,45 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="AccountServiceImplTest.validateTransferWithIncorrectPinThrowException" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="eWallet" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="services.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="services" />
+      <option name="MAIN_CLASS_NAME" value="services.AccountServiceImplTest" />
+      <option name="METHOD_NAME" value="validateTransferWithIncorrectPinThrowException" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TransactionServiceImplTest.testViewAllDebitTransactions" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="eWallet" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="services.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="services" />
+      <option name="MAIN_CLASS_NAME" value="services.TransactionServiceImplTest" />
+      <option name="METHOD_NAME" value="testViewAllDebitTransactions" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.AccountServiceImplTest.validateTransferWithIncorrectPinThrowException" />
         <item itemvalue="JUnit.AccountServiceImplTest" />
         <item itemvalue="JUnit.AccountServiceImplTest.transferToIncorrectAccountNumberThrowException" />
-        <item itemvalue="JUnit.AccountServiceImplTest.transferBelowBalanceThrowException" />
         <item itemvalue="JUnit.AccountServiceImplTest.userCanTransferFromOneAccountToAnotherTest" />
+        <item itemvalue="JUnit.TransactionServiceImplTest.testViewAllDebitTransactions" />
       </list>
     </recent_temporary>
   </component>
@@ -228,11 +231,35 @@
       <workItem from="1686591814179" duration="1658000" />
       <workItem from="1686662658146" duration="42000" />
       <workItem from="1686688989469" duration="81000" />
+      <workItem from="1686890736518" duration="3321000" />
+      <workItem from="1686934154010" duration="63000" />
+      <workItem from="1687005168412" duration="162000" />
+      <workItem from="1687105346250" duration="13047000" />
+      <workItem from="1687189284794" duration="310000" />
+      <workItem from="1687191503189" duration="358000" />
+      <workItem from="1687206460265" duration="398000" />
+      <workItem from="1687207573465" duration="325000" />
+      <workItem from="1687234813869" duration="660000" />
+      <workItem from="1687266533190" duration="856000" />
+      <workItem from="1687312370843" duration="7803000" />
+      <workItem from="1687399460190" duration="6678000" />
     </task>
+    <task id="LOCAL-00001" summary="Updated">
+      <created>1686890809972</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1686890809972</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Updated" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated" />
   </component>
   <component name="VgoProject">
     <settings-migrated>true</settings-migrated>

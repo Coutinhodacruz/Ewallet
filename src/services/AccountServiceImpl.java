@@ -124,10 +124,11 @@ public class AccountServiceImpl implements AccountService{
 
     @Override
     public TransferResponse transfer(TransferRequest transferRequest) throws NegativeAmountException, InsufficientBalanceException, IncorrectAccountNumberException {
-        Account accountPin = accountRepository.confirmPin(transferRequest.getPin());
-
         BigDecimal transferAmount = transferRequest.getAmount();
 
+        if (transferAmount.compareTo(BigDecimal.ZERO) < 0) {
+            throw new NegativeAmountException("Transfer amount cannot be negative.");
+        }
 
         BigDecimal senderBalance = getBalance(transferRequest.getSenderAccountNumber());
         if (senderBalance.compareTo(transferAmount) < 0) {
@@ -139,22 +140,19 @@ public class AccountServiceImpl implements AccountService{
         withdrawRequest.setAmount(transferAmount);
         withdrawFrom(withdrawRequest);
 
-
         DepositRequest depositRequest = new DepositRequest();
         depositRequest.setAccountNumber(transferRequest.getRecipientAccountNumber());
         depositRequest.setAmount(transferAmount);
-
 
         if (!accountRepository.accountExists(transferRequest.getRecipientAccountNumber())) {
             throw new IncorrectAccountNumberException("Recipient account not found.");
         }
         depositInto(depositRequest);
 
-      depositInto(depositRequest);
-
         TransferResponse transferResponse = new TransferResponse("Transfer Successful");
         return transferResponse;
     }
+
 
 
 

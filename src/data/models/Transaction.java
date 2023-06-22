@@ -10,11 +10,13 @@ import java.time.LocalDate;
 public class Transaction {
 
 
+    private String accountName = "";
     private String id;
     private TransactionStatus status;
     private TransactionType type;
     private String accountNumber;
     private BigDecimal balance;
+    private String accountId;
     private BigDecimal amount;
     private LocalDate date = LocalDate.now();
 

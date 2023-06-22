@@ -1,10 +1,12 @@
 package utils;
 
 import data.models.Account;
+import data.models.Transaction;
 import dto.request.LoginRequest;
 import dto.request.RegisterRequest;
 import dto.response.LoginResponse;
 import dto.response.RegisterResponse;
+import dto.response.TransactionResponse;
 
 public class Mapper {
     public static Account map(RegisterRequest registerRequest) {
@@ -37,5 +39,15 @@ public class Mapper {
 
         return loginResponse;
     }
+
+    public static TransactionResponse map(Transaction foundTransaction) {
+        TransactionResponse transactionResponse = new TransactionResponse();
+        transactionResponse.setAmount(foundTransaction.getAmount());
+        transactionResponse.setTransactionType(foundTransaction.getType());
+        transactionResponse.setAccountName(foundTransaction.getAccountName());
+        transactionResponse.setDate(foundTransaction.getDate());
+        return transactionResponse;
+    }
+
 
 }

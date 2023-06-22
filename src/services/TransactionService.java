@@ -1,14 +1,20 @@
 package services;
 
-import data.models.Transaction;
+
+import dto.request.TransactionRequest;
 import dto.response.TransactionResponse;
 
 import java.util.List;
 
-public interface TransactionService {
 
-    TransactionResponse getTransactionById(int id);
-    List<TransactionResponse> getAllTransaction();
+public interface TransactionService {
+    List<TransactionResponse> findAllTransactions();
+
+    TransactionResponse findTransactionsByAccountId(TransactionRequest transactionRequest);
+
+    TransactionResponse viewAllDebitTransactions(TransactionRequest transactionRequest);
+
+    TransactionResponse viewAllCreditTransactions(TransactionRequest transactionRequest);
 
 
 }

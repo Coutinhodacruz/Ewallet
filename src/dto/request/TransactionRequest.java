@@ -1,4 +1,4 @@
-package dto.response;
+package dto.request;
 
 
 import data.models.TransactionStatus;
@@ -10,10 +10,10 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
-@Getter
 @Setter
+@Getter
+public class TransactionRequest {
 
-public class TransactionResponse {
 
     private  String  id;
     private TransactionStatus transactionStatus;
@@ -23,8 +23,6 @@ public class TransactionResponse {
     private String accountName = "";
     private LocalDateTime transactionDateTime = LocalDateTime.now();
     private LocalDate date = LocalDate.now();
-
-    private  String  message;
 
 
 }
