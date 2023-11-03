@@ -1,9 +1,9 @@
 import controllers.AccountController;
-import controllers.TransactionController;
-import dto.request.DepositRequest;
-import dto.request.LoginRequest;
-import dto.request.RegisterRequest;
-import dto.request.TransferRequest;
+import eWallet.controllers.TransactionController;
+import eWallet.dto.request.DepositRequest;
+import eWallet.dto.request.LoginRequest;
+import eWallet.dto.request.RegisterRequest;
+import eWallet.dto.request.TransferRequest;
 
 import javax.swing.*;
 import java.math.BigDecimal;
